@@ -1,0 +1,22 @@
+---
+title: "Sample Descriptive Analysis Using Publicly Available Healthcare Data"
+author: "Paul G. Smith"
+date: "10/29/2019"
+output: 
+  github_document:
+    toc: true
+    html_preview: false
+---
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Daily information summary of economic indicators available from FRED, FRB St. Louis
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+# create first graph
+source('001_Six month indexes.R')
+```
+Other stuff to come
