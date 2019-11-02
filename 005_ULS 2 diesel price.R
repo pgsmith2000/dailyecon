@@ -1,17 +1,13 @@
-# yesterday <- as_date(now() - days(1))
-today <- as_date(now())
-yesterday <- as_date(now() - days(1))
-end_date <- yesterday
-if(wday(yesterday) > 6){
-  end_date <- as_date(now() - days(wday(yesterday)-6))
-}
-start_date <- as_date(yesterday-days(45))
 
-# last 30 days for DDFUELLA
-fr_DDFUELLA <- fredr(series_id = "DDFUELLA",
-                 start_date, end_date)
-fr_DDFUELLA$series_id <- NULL
-names(fr_DDFUELLA)[2] <- "DDFUELLA"
+# set start and end dates
+end_date <- now() - 1
+if(wday(now() - 1) > 6 || wday(now() - 1) == 1){
+  end_date <- as_date(now() - days(wday(now() - 1)-6))
+}
+start_date <- as_date((now() - 1) - days(45))
+
+# last 45 days of DDFUELLA
+fr_DDFUELLA <- makeFREDtable("DDFUELLA", start.date = start_date, end.date = end_date)
 
 # Plot it
 p5 <- ggplot(fr_DDFUELLA, aes(x=date, y=DDFUELLA))
@@ -23,5 +19,3 @@ p5 <- p5 + geom_line(size=2, color="darkgreen") + theme_minimal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
-  
-

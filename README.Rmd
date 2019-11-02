@@ -1,7 +1,7 @@
 ---
 title: "Daily information summary of economic indicators available from FRED, FRB St. Louis"
 author: "Paul G. Smith"
-date: "11/1/2019"
+date: '`r paste("First created on Oct 31, 2019. Updated on", format(Sys.Date(),"%b %d, %Y"))`'
 output: 
   github_document:
     toc: true
@@ -14,10 +14,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
+
 ```{r echo=TRUE, message=TRUE, warning=TRUE}
 source("Dependencies.R", echo = TRUE)
+source("Functions.R", echo = TRUE)
 
 ```
+
+### `r now() %>% format('%A')` Morning Update: `r now() %>% format('%B %d, %Y')`
+
 
 ### 1. Six-Month Change in Major Stock Indexes
 
@@ -45,12 +50,35 @@ source("004_Gas percent of oil.R", echo = TRUE)
 
 ### 5. ULS #2 Diesel Price
 
-
 ```{r echo=TRUE, message=TRUE, warning=TRUE}
 source("005_ULS 2 diesel price.R", echo = TRUE)
 ```
 
-### Finally, Print the Plots
+### 6. Price of Gold
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("006_Price of gold.R", echo = TRUE)
+```
+
+### 7. Price of Silver
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("007_Price of silver.R", echo = TRUE)
+```
+
+### 8. 4-Wk Moving Avg Unemployment Initial Claims
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("008_Unemployment initial claims.R", echo = TRUE)
+```
+
+### 9. Breakeven Inflation, 5-Year
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("009_Breakeven inflation.R", echo = TRUE)
+```
+
+### Finally, Print the Plots for `r now() %>% format('%A')` Morning Update: `r now() %>% format('%B %d, %Y')`
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}

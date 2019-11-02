@@ -1,18 +1,14 @@
-# set FRED key
-user_api_key<-read.csv("../../fred_api_key.csv", 
-                       stringsAsFactors=TRUE, as.is=TRUE)
-fredr_set_key(user_api_key$fredAPIkey)
-
-# yesterday <- as_date(now() - days(1))
-today <- as_date(now())
-yesterday <- as_date(now() - days(1))
-end_date <- yesterday
-if(wday(yesterday) > 6){
-  end_date <- as_date(now() - days(wday(yesterday)-6))
+# set start and end dates
+end_date <- now() - 1
+if(wday(now() - 1) > 6 || wday(now() - 1) == 1){
+  end_date <- as_date(now() - days(wday(now() - 1)-6))
 }
-start_date <- as_date(now()-days(26*7) - days())
-start_date2 <- as_date(start_date - days(26*7))
-end_date2 <- as_date(end_date-days(26*7))
+start_date <- as_date((now() - 1) - days(26*7) - days(1))
+end_date2 <- start_date 
+start_date2 <- start_date - days(26*7)
+
+end_date - start_date
+end_date2 - start_date2
 
 # last 6 month data for DJIA, SP500, and NASDAQCOM
 fr_DJIA <- fredr(series_id = "DJIA",

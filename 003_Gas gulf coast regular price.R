@@ -3,20 +3,15 @@ user_api_key<-read.csv("../../fred_api_key.csv",
                        stringsAsFactors=TRUE, as.is=TRUE)
 fredr_set_key(user_api_key$fredAPIkey)
 
-# yesterday <- as_date(now() - days(1))
-today <- as_date(now())
-yesterday <- as_date(now() - days(1))
-end_date <- yesterday
-if(wday(yesterday) > 6){
-  end_date <- as_date(now() - days(wday(yesterday)-6))
+# set start and end dates
+end_date <- now() - 1
+if(wday(now() - 1) > 6 || wday(now() - 1) == 1){
+  end_date <- as_date(now() - days(wday(now() - 1)-6))
 }
-start_date <- as_date(yesterday-days(45))
+start_date <- as_date((now() - 1) - days(45))
 
-# last 45 days for DGASUSGULF
-fr_DGASUSGULF <- fredr(series_id = "DGASUSGULF",
-                 start_date, end_date)
-fr_DGASUSGULF$series_id <- NULL
-names(fr_DGASUSGULF)[2] <- "DGASUSGULF"
+# last 45 days of DGASUSGULF
+fr_DGASUSGULF <- makeFREDtable("DGASUSGULF", start.date = start_date, end.date = end_date)
 
 # Plot it
 p3 <- ggplot(fr_DGASUSGULF, aes(x=date, y=DGASUSGULF))
