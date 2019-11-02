@@ -191,9 +191,9 @@ source("002_WTI crude oil price.R", echo = TRUE)
     ## 
     ## > p2 <- ggplot(fr_DCOILWTICO, aes(x = date, y = DCOILWTICO))
     ## 
-    ## > p2 <- p2 + geom_line(size = 2, color = "navyblue") + 
+    ## > p2 <- p2 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     xlab("") + scale_y_co .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED]
 
 ### 3\. Regular Gasoline Price
 
@@ -228,9 +228,9 @@ source("003_Gas gulf coast regular price.R", echo = TRUE)
     ## 
     ## > p3 <- ggplot(fr_DGASUSGULF, aes(x = date, y = DGASUSGULF))
     ## 
-    ## > p3 <- p3 + geom_line(size = 2, color = "navyblue") + 
-    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     xlab("") + scale_y_co .... [TRUNCATED]
+    ## > p3 <- p3 + geom_line(size = 2, color = "darkgreen") + 
+    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(4)) + 
+    ## +     xlab("") + scale_y_c .... [TRUNCATED]
 
 ### 4\. Gasoline % of Oil Price
 
@@ -265,9 +265,9 @@ source("004_Gas percent of oil.R", echo = TRUE)
     ## 
     ## > p4 <- ggplot(fr_DCOILWTICO, aes(x = date, y = DCOILWTICO))
     ## 
-    ## > p4 <- p4 + geom_line(size = 2, color = "navyblue") + 
+    ## > p4 <- p4 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     xlab("") + scale_y_co .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED]
 
 ### 5\. ULS \#2 Diesel Price
 
@@ -297,9 +297,9 @@ source("005_ULS 2 diesel price.R", echo = TRUE)
     ## 
     ## > p5 <- ggplot(fr_DDFUELLA, aes(x = date, y = DDFUELLA))
     ## 
-    ## > p5 <- p5 + geom_line(size = 2, color = "navyblue") + 
+    ## > p5 <- p5 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     xlab("") + scale_y_co .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED]
 
 ### Finally, Print the Plots
 

@@ -15,10 +15,13 @@ names(fr_DDFUELLA)[2] <- "DDFUELLA"
 
 # Plot it
 p5 <- ggplot(fr_DDFUELLA, aes(x=date, y=DDFUELLA))
-p5 <- p5 + geom_line(size=2, color="navyblue") + theme_minimal() +
-  scale_x_date(breaks = pretty_breaks(6)) + xlab("") +
+p5 <- p5 + geom_line(size=2, color="darkgreen") + theme_minimal() +
+  scale_x_date(breaks = pretty_breaks(6)) +
   scale_y_continuous(limit=c(1.85,2.20)) +
   stat_smooth(method = lm) +
-  labs(title="5. ULS #2 Diesel Price", x="", y="Dollars per Gallon")
+  labs(title="5. ULS #2 Diesel Price", x="", y="Dollars per Gallon") + 
+  theme_minimal() +
+  theme(legend.position = 'bottom') +
+  theme(axis.text.x = element_text(angle = 45))
   
 
