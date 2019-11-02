@@ -78,6 +78,30 @@ source("008_Unemployment initial claims.R", echo = TRUE)
 source("009_Breakeven inflation.R", echo = TRUE)
 ```
 
+### 10. GDP Growth Since 1980
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("010_GDP growth.R", echo = TRUE)
+```
+
+### 11. M2 Money Stock Growth Since 1980
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("011_M2 money stock growth.R", echo = TRUE)
+```
+
+### 12. Consumer Price Index Growth Since 1980
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("012_Consumer price index growth.R", echo = TRUE)
+```
+
+### 13. Producer Price Index Growth Since 1980
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("013_Producer price index growth.R", echo = TRUE)
+```
+
 ### Finally, Print the Plots for `r now() %>% format('%A')` Morning Update: `r now() %>% format('%B %d, %Y')`
 
 

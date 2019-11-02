@@ -19,7 +19,8 @@ p3 <- p3 + geom_line(size=2, color="darkgreen") + theme_minimal() +
   scale_x_date(breaks = pretty_breaks(6)) + xlab("") +
   scale_y_continuous(limit=c(1.5,1.8)) +
   stat_smooth(method = lm) +
-  labs(title="3. Regular Gasoline Price", x="", y="Dollars per Gallon") + 
+  labs(title="3. Regular Gasoline Price", x="", y="Dollars per Gallon",
+       caption = "Regular Gasoline Price, U.S. EIA") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))

@@ -21,7 +21,8 @@ p8 <- p8 + geom_line(size=2, color="peru") + theme_minimal() +
   scale_x_date(breaks = pretty_breaks(6)) +
   scale_y_continuous(limit=c(low.delta,high.delta)) +
   stat_smooth(method = lm) +
-  labs(title="8. 4-Wk Avg Initial claims", x="", y="") + 
+  labs(title="8. 4-Wk Avg Initial claims", x="", y="",
+       caption = "US ETA.") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))

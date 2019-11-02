@@ -21,7 +21,8 @@ p9 <- p9 + geom_line(size=2, color="peru") + theme_minimal() +
   scale_x_date(breaks = pretty_breaks(6)) +
   scale_y_continuous(limit=c(0,high.delta)) +
   stat_smooth(method = lm) +
-  labs(title="9. 5 Year Breakeven Inflation Rate", x="", y="") + 
+  labs(title="9. 5 Year Breakeven Inflation Rate", x="", y="",
+       caption = "FRB St. Louis") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))

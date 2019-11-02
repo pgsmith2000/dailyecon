@@ -15,7 +15,8 @@ p5 <- p5 + geom_line(size=2, color="darkgreen") + theme_minimal() +
   scale_x_date(breaks = pretty_breaks(6)) +
   scale_y_continuous(limit=c(1.85,2.20)) +
   stat_smooth(method = lm) +
-  labs(title="5. ULS #2 Diesel Price", x="", y="Dollars per Gallon") + 
+  labs(title="5. ULS #2 Diesel Price", x="", y="Dollars per Gallon",
+       caption = "ULS #2 Diesel Price, U.S. EIA") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))

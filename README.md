@@ -20,6 +20,13 @@ First created on Oct 31, 2019. Updated on Nov 02, 2019
       - [8. 4-Wk Moving Avg Unemployment Initial
         Claims](#wk-moving-avg-unemployment-initial-claims)
       - [9. Breakeven Inflation, 5-Year](#breakeven-inflation-5-year)
+      - [10. GDP Growth Since 1980](#gdp-growth-since-1980)
+      - [11. M2 Money Stock Growth Since
+        1980](#m2-money-stock-growth-since-1980)
+      - [12. Consumer Price Index Growth Since
+        1980](#consumer-price-index-growth-since-1980)
+      - [13. Producer Price Index Growth Since
+        1980](#producer-price-index-growth-since-1980)
       - [Finally, Print the Plots for Saturday Morning Update: November
         02,
         2019](#finally-print-the-plots-for-saturday-morning-update-november-02-2019)
@@ -411,6 +418,131 @@ source("009_Breakeven inflation.R", echo = TRUE)
     ## > p9 <- p9 + geom_line(size = 2, color = "peru") + theme_minimal() + 
     ## +     scale_x_date(breaks = pretty_breaks(6)) + scale_y_continuous(limit = c(0,  .... [TRUNCATED]
 
+### 10\. GDP Growth Since 1980
+
+``` r
+source("010_GDP growth.R", echo = TRUE)
+```
+
+    ## 
+    ## > end_date <- now() - 1
+    ## 
+    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
+    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## + }
+    ## 
+    ## > start_date <- ymd("19800101")
+    ## 
+    ## > fr_GDP <- makeFREDtable("GDP", start.date = start_date, 
+    ## +     end.date = end_date)
+    ## 
+    ## > delta <- ((max(fr_GDP$GDP) - min(fr_GDP$GDP))/0.8) * 
+    ## +     0.1
+    ## 
+    ## > low.delta <- min(fr_GDP$GDP) - delta
+    ## 
+    ## > high.delta <- max(fr_GDP$GDP) + delta
+    ## 
+    ## > p10 <- ggplot(fr_GDP, aes(x = date, y = GDP))
+    ## 
+    ## > p10 <- p10 + geom_line(size = 2, color = "peru") + 
+    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
+    ## +     scale_y_continuous(limi .... [TRUNCATED]
+
+### 11\. M2 Money Stock Growth Since 1980
+
+``` r
+source("011_M2 money stock growth.R", echo = TRUE)
+```
+
+    ## 
+    ## > end_date <- now() - 1
+    ## 
+    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
+    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## + }
+    ## 
+    ## > start_date <- ymd("19800101")
+    ## 
+    ## > fr_M2 <- makeFREDtable("M2", start.date = start_date, 
+    ## +     end.date = end_date)
+    ## 
+    ## > delta <- ((max(fr_M2$M2) - min(fr_M2$M2))/0.8) * 0.1
+    ## 
+    ## > low.delta <- min(fr_M2$M2) - delta
+    ## 
+    ## > high.delta <- max(fr_M2$M2) + delta
+    ## 
+    ## > p11 <- ggplot(fr_M2, aes(x = date, y = M2))
+    ## 
+    ## > p11 <- p11 + geom_line(size = 2, color = "peru") + 
+    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
+    ## +     scale_y_continuous(limi .... [TRUNCATED]
+
+### 12\. Consumer Price Index Growth Since 1980
+
+``` r
+source("012_Consumer price index growth.R", echo = TRUE)
+```
+
+    ## 
+    ## > end_date <- now() - 1
+    ## 
+    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
+    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## + }
+    ## 
+    ## > start_date <- ymd("19800101")
+    ## 
+    ## > fr_CPALTT01USM661S <- makeFREDtable("CPALTT01USM661S", 
+    ## +     start.date = start_date, end.date = end_date)
+    ## 
+    ## > delta <- ((max(fr_CPALTT01USM661S$CPALTT01USM661S) - 
+    ## +     min(fr_CPALTT01USM661S$CPALTT01USM661S))/0.8) * 0.1
+    ## 
+    ## > low.delta <- min(fr_CPALTT01USM661S$CPALTT01USM661S) - 
+    ## +     delta
+    ## 
+    ## > high.delta <- max(fr_CPALTT01USM661S$CPALTT01USM661S) + 
+    ## +     delta
+    ## 
+    ## > p12 <- ggplot(fr_CPALTT01USM661S, aes(x = date, y = CPALTT01USM661S))
+    ## 
+    ## > p12 <- p12 + geom_line(size = 2, color = "peru") + 
+    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
+    ## +     scale_y_continuous(limi .... [TRUNCATED]
+
+### 13\. Producer Price Index Growth Since 1980
+
+``` r
+source("013_Producer price index growth.R", echo = TRUE)
+```
+
+    ## 
+    ## > end_date <- now() - 1
+    ## 
+    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
+    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## + }
+    ## 
+    ## > start_date <- ymd("19800101")
+    ## 
+    ## > fr_PPIACO <- makeFREDtable("PPIACO", start.date = start_date, 
+    ## +     end.date = end_date)
+    ## 
+    ## > delta <- ((max(fr_PPIACO$PPIACO) - min(fr_PPIACO$PPIACO))/0.8) * 
+    ## +     0.1
+    ## 
+    ## > low.delta <- min(fr_PPIACO$PPIACO) - delta
+    ## 
+    ## > high.delta <- max(fr_PPIACO$PPIACO) + delta
+    ## 
+    ## > p13 <- ggplot(fr_PPIACO, aes(x = date, y = PPIACO))
+    ## 
+    ## > p13 <- p13 + geom_line(size = 2, color = "peru") + 
+    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
+    ## +     scale_y_continuous(limi .... [TRUNCATED]
+
 ### Finally, Print the Plots for Saturday Morning Update: November 02, 2019
 
-![](README_files/figure-gfm/unnamed-chunk-11-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-11-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-11-3.png)<!-- -->
+![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->

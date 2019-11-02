@@ -58,7 +58,11 @@ p1 <- p1 + geom_line(aes(color=Symbol), size=2) +
   scale_y_continuous(labels=scales::percent) +
   scale_color_manual(values=c('navyblue','darkgreen', 'peru')) +
   scale_x_date(breaks = pretty_breaks(6), date_labels = "%d %b") +
-  labs(title="1. Six-Month Change in Major Stock Indexes", x="", color="") +
+  labs(title = "1. Six-Month Change in Major Stock Indexes", 
+       x="", 
+       color="", 
+       subtitle = "", 
+       caption = "\uA9 S&P Dow Jones Indices LLC \uA9 NASDAQ OMX Group") +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))

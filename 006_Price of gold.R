@@ -21,7 +21,8 @@ p6 <- p6 + geom_line(size=2, color="darkgreen") + theme_minimal() +
   scale_x_date(breaks = pretty_breaks(6)) +
   scale_y_continuous(limit=c(low.delta,high.delta)) +
   stat_smooth(method = lm) +
-  labs(title="6. Price of Gold", x="", y="$ per Troy Ounce") + 
+  labs(title="6. Price of Gold", x="", y="$ per Troy Ounce",
+       caption = "Price of Gold, ICE Benchmark Admin. Ltd.") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))

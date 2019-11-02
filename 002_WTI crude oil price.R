@@ -19,7 +19,8 @@ p2 <- p2 + geom_line(size=2, color="darkgreen") + theme_minimal() +
   scale_x_date(breaks = pretty_breaks(6)) +
   scale_y_continuous(limits = c(0,80)) +
   stat_smooth(method = lm) +
-  labs(title="2. WTI Crude Oil Price", x="", y="Dollars per Barrel") + 
+  labs(title="2. WTI Crude Oil Price", x="", y="Dollars per Barrel", 
+       caption = "WTI Crude Oil Price, U.S. EIA") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
