@@ -142,12 +142,12 @@ source("001_Six month indexes.R", echo = TRUE)
     ## 
     ## > dfIndexChange <- dfIndexLast6
     ## 
-    ## > dfIndexChange$DJIA <- ((dfIndexPrev6$DJIA - dfIndexLast6$DJIA)/dfIndexPrev6$DJIA)
+    ## > dfIndexChange$DJIA <- ((dfIndexLast6$DJIA - dfIndexPrev6$DJIA)/dfIndexPrev6$DJIA)
     ## 
-    ## > dfIndexChange$SP500 <- ((dfIndexPrev6$SP500 - dfIndexLast6$SP500)/dfIndexPrev6$SP500)
+    ## > dfIndexChange$SP500 <- ((dfIndexLast6$SP500 - dfIndexPrev6$SP500)/dfIndexPrev6$SP500)
     ## 
-    ## > dfIndexChange$NASDAQCOM <- ((dfIndexPrev6$NASDAQCOM - 
-    ## +     dfIndexLast6$NASDAQCOM)/dfIndexPrev6$NASDAQCOM)
+    ## > dfIndexChange$NASDAQCOM <- ((dfIndexLast6$NASDAQCOM - 
+    ## +     dfIndexPrev6$NASDAQCOM)/dfIndexPrev6$NASDAQCOM)
     ## 
     ## > dfIndexChange_long <- gather(dfIndexChange, Symbol, 
     ## +     Change, -date)
@@ -229,7 +229,7 @@ source("003_Gas gulf coast regular price.R", echo = TRUE)
     ## > p3 <- ggplot(fr_DGASUSGULF, aes(x = date, y = DGASUSGULF))
     ## 
     ## > p3 <- p3 + geom_line(size = 2, color = "darkgreen") + 
-    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(4)) + 
+    ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
     ## +     xlab("") + scale_y_c .... [TRUNCATED]
 
 ### 4\. Gasoline % of Oil Price
@@ -239,31 +239,14 @@ source("004_Gas percent of oil.R", echo = TRUE)
 ```
 
     ## 
-    ## > user_api_key <- read.csv("../../fred_api_key.csv", 
-    ## +     stringsAsFactors = TRUE, as.is = TRUE)
+    ## > fr_gaspercentoil <- fr_DGASUSGULF
     ## 
-    ## > fredr_set_key(user_api_key$fredAPIkey)
+    ## > fr_gaspercentoil$DGASUSGULF <- (fr_DGASUSGULF$DGASUSGULF/fr_DCOILWTICO$DCOILWTICO) * 
+    ## +     100
     ## 
-    ## > today <- as_date(now())
+    ## > names(fr_gaspercentoil)[2] <- "Percent"
     ## 
-    ## > yesterday <- as_date(now() - days(1))
-    ## 
-    ## > end_date <- yesterday
-    ## 
-    ## > if (wday(yesterday) > 6) {
-    ## +     end_date <- as_date(now() - days(wday(yesterday) - 6))
-    ## + }
-    ## 
-    ## > start_date <- as_date(yesterday - days(45))
-    ## 
-    ## > fr_DCOILWTICO <- fredr(series_id = "DCOILWTICO", start_date, 
-    ## +     end_date)
-    ## 
-    ## > fr_DCOILWTICO$series_id <- NULL
-    ## 
-    ## > names(fr_DCOILWTICO)[2] <- "DCOILWTICO"
-    ## 
-    ## > p4 <- ggplot(fr_DCOILWTICO, aes(x = date, y = DCOILWTICO))
+    ## > p4 <- ggplot(fr_gaspercentoil, aes(x = date, y = Percent))
     ## 
     ## > p4 <- p4 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 

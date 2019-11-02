@@ -48,10 +48,10 @@ dfIndexPrev6 <- fill(dfIndexPrev6, 2:4, .direction=c("downup"))
 
 # Create the major index change table
 dfIndexChange <- dfIndexLast6
-dfIndexChange$DJIA <- ((dfIndexPrev6$DJIA - dfIndexLast6$DJIA)/dfIndexPrev6$DJIA)
-dfIndexChange$SP500 <- ((dfIndexPrev6$SP500 - dfIndexLast6$SP500)/dfIndexPrev6$SP500)
+dfIndexChange$DJIA <- ((dfIndexLast6$DJIA - dfIndexPrev6$DJIA)/dfIndexPrev6$DJIA)
+dfIndexChange$SP500 <- ((dfIndexLast6$SP500 - dfIndexPrev6$SP500)/dfIndexPrev6$SP500)
 dfIndexChange$NASDAQCOM <- 
-  ((dfIndexPrev6$NASDAQCOM - dfIndexLast6$NASDAQCOM)/dfIndexPrev6$NASDAQCOM)
+  ((dfIndexLast6$NASDAQCOM - dfIndexPrev6$NASDAQCOM)/dfIndexPrev6$NASDAQCOM)
 
 # Make it long for ggplot
 dfIndexChange_long <- gather(dfIndexChange, Symbol, Change,-date)

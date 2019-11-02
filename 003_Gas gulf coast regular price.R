@@ -12,7 +12,7 @@ if(wday(yesterday) > 6){
 }
 start_date <- as_date(yesterday-days(45))
 
-# last 30 days for DGASUSGULF
+# last 45 days for DGASUSGULF
 fr_DGASUSGULF <- fredr(series_id = "DGASUSGULF",
                  start_date, end_date)
 fr_DGASUSGULF$series_id <- NULL
@@ -21,12 +21,11 @@ names(fr_DGASUSGULF)[2] <- "DGASUSGULF"
 # Plot it
 p3 <- ggplot(fr_DGASUSGULF, aes(x=date, y=DGASUSGULF))
 p3 <- p3 + geom_line(size=2, color="darkgreen") + theme_minimal() +
-  scale_x_date(breaks = pretty_breaks(4)) + xlab("") +
+  scale_x_date(breaks = pretty_breaks(6)) + xlab("") +
   scale_y_continuous(limit=c(1.5,1.8)) +
   stat_smooth(method = lm) +
   labs(title="3. Regular Gasoline Price", x="", y="Dollars per Gallon") + 
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
-  
 
