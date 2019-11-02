@@ -1,22 +1,58 @@
 ---
-title: "Sample Descriptive Analysis Using Publicly Available Healthcare Data"
+title: "Daily information summary of economic indicators available from FRED, FRB St. Louis"
 author: "Paul G. Smith"
-date: "10/29/2019"
+date: "11/1/2019"
 output: 
   github_document:
     toc: true
     html_preview: false
 ---
 
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Daily information summary of economic indicators available from FRED, FRB St. Louis
+## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
 ```{r echo=TRUE, message=TRUE, warning=TRUE}
-# create first graph
-source('001_Six month indexes.R')
+source("Dependencies.R", echo = TRUE)
+
 ```
-Other stuff to come
+
+### 1. Six-Month Change in Major Stock Indexes
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("001_Six month indexes.R", echo = TRUE)
+```
+
+### 2. WTI Crude Oil Price
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("002_WTI crude oil price.R", echo = TRUE)
+```
+
+### 3. Regular Gasoline Price
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("003_Gas gulf coast regular price.R", echo = TRUE)
+```
+
+### 4. Gasoline % of Oil Price
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("004_Gas percent of oil.R", echo = TRUE)
+```
+
+### 5. ULS #2 Diesel Price
+
+
+```{r echo=TRUE, message=TRUE, warning=TRUE}
+source("005_ULS 2 diesel price.R", echo = TRUE)
+```
+
+### Finally, Print the Plots
+
+
+```{r echo=FALSE, message=FALSE, warning=FALSE}
+source("200_Print report.R", echo = FALSE)
+```
