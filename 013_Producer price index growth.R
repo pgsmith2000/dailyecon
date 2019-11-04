@@ -1,7 +1,10 @@
 # set start and end dates
-end_date <- now() - 1
-if(wday(now() - 1) > 6 || wday(now() - 1) == 1){
-  end_date <- as_date(now() - days(wday(now() - 1)-6))
+end_date <- Sys.Date() - 1
+
+if (wday(end_date) == 1){
+  end_date <- end_date - 3
+} else if (wday(end_date) == 7){
+  end_date <- end_date - 2
 }
 start_date <- ymd("19800101")
 

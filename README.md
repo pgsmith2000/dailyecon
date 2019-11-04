@@ -2,13 +2,13 @@ Daily information summary of economic indicators available from FRED,
 FRB St. Louis
 ================
 Paul G. Smith
-First created on Oct 31, 2019. Updated on Nov 02, 2019
+First created on Oct 31, 2019. Updated on Nov 04, 2019
 
   - [Daily information summary of economic indicators available from
     FRED, FRB
     St. Louis](#daily-information-summary-of-economic-indicators-available-from-fred-frb-st.-louis)
-      - [Saturday Morning Update: November 02,
-        2019](#saturday-morning-update-november-02-2019)
+      - [Monday Morning Update: November 04,
+        2019](#monday-morning-update-november-04-2019)
       - [1. Six-Month Change in Major Stock
         Indexes](#six-month-change-in-major-stock-indexes)
       - [2. WTI Crude Oil Price](#wti-crude-oil-price)
@@ -27,9 +27,9 @@ First created on Oct 31, 2019. Updated on Nov 02, 2019
         1980](#consumer-price-index-growth-since-1980)
       - [13. Producer Price Index Growth Since
         1980](#producer-price-index-growth-since-1980)
-      - [Finally, Print the Plots for Saturday Morning Update: November
-        02,
-        2019](#finally-print-the-plots-for-saturday-morning-update-november-02-2019)
+      - [Finally, Print the Plots for Monday Morning Update: November
+        04,
+        2019](#finally-print-the-plots-for-monday-morning-update-november-04-2019)
 
 ## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
@@ -95,7 +95,7 @@ source("Functions.R", echo = TRUE)
     ## +     df$series_id <- NULL
     ## +   .... [TRUNCATED]
 
-### Saturday Morning Update: November 02, 2019
+### Monday Morning Update: November 04, 2019
 
 ### 1\. Six-Month Change in Major Stock Indexes
 
@@ -104,24 +104,19 @@ source("001_Six month indexes.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(26 * 7) - 
-    ## +     days(1))
+    ## > start_date <- end_date - (26 * 7)
     ## 
     ## > end_date2 <- start_date
     ## 
-    ## > start_date2 <- start_date - days(26 * 7)
-    ## 
-    ## > end_date - start_date
-    ## Time difference of 182 days
-    ## 
-    ## > end_date2 - start_date2
-    ## Time difference of 182 days
+    ## > start_date2 <- start_date - (26 * 7)
     ## 
     ## > fr_DJIA <- fredr(series_id = "DJIA", start_date, end_date)
     ## 
@@ -131,8 +126,7 @@ source("001_Six month indexes.R", echo = TRUE)
     ## > fr_NASDAQCOM <- fredr(series_id = "NASDAQCOM", start_date, 
     ## +     end_date)
     ## 
-    ## > date <- seq(as_date(start_date), as_date(end_date), 
-    ## +     by = "days")
+    ## > date <- seq(start_date, end_date, by = "days")
     ## 
     ## > fr_dates <- as.data.frame(date)
     ## 
@@ -156,8 +150,7 @@ source("001_Six month indexes.R", echo = TRUE)
     ## > fr_NASDAQCOM <- fredr(series_id = "NASDAQCOM", start_date2, 
     ## +     end_date2)
     ## 
-    ## > date <- seq(as_date(start_date2), as_date(end_date2), 
-    ## +     by = "days")
+    ## > date <- seq(start_date2, end_date2, by = "days")
     ## 
     ## > fr_dates <- as.data.frame(date)
     ## 
@@ -197,18 +190,15 @@ source("002_WTI crude oil price.R", echo = TRUE)
 ```
 
     ## 
-    ## > user_api_key <- read.csv("../../fred_api_key.csv", 
-    ## +     stringsAsFactors = TRUE, as.is = TRUE)
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > fredr_set_key(user_api_key$fredAPIkey)
-    ## 
-    ## > end_date <- now() - 1
-    ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(45))
+    ## > start_date <- end_date - (45)
     ## 
     ## > fr_DCOILWTICO <- makeFREDtable("DCOILWTICO", start.date = start_date, 
     ## +     end.date = end_date)
@@ -226,18 +216,15 @@ source("003_Gas gulf coast regular price.R", echo = TRUE)
 ```
 
     ## 
-    ## > user_api_key <- read.csv("../../fred_api_key.csv", 
-    ## +     stringsAsFactors = TRUE, as.is = TRUE)
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > fredr_set_key(user_api_key$fredAPIkey)
-    ## 
-    ## > end_date <- now() - 1
-    ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(45))
+    ## > start_date <- end_date - (45)
     ## 
     ## > fr_DGASUSGULF <- makeFREDtable("DGASUSGULF", start.date = start_date, 
     ## +     end.date = end_date)
@@ -275,13 +262,15 @@ source("005_ULS 2 diesel price.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(45))
+    ## > start_date <- end_date - (45)
     ## 
     ## > fr_DDFUELLA <- makeFREDtable("DDFUELLA", start.date = start_date, 
     ## +     end.date = end_date)
@@ -299,13 +288,15 @@ source("006_Price of gold.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(45))
+    ## > start_date <- end_date - (45)
     ## 
     ## > fr_GOLDAMGBD228NLBM <- makeFREDtable("GOLDAMGBD228NLBM", 
     ## +     start.date = start_date, end.date = end_date)
@@ -332,13 +323,15 @@ source("007_Price of silver.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(45))
+    ## > start_date <- end_date - (45)
     ## 
     ## > fr_SLVPRUSD <- makeFREDtable("SLVPRUSD", start.date = start_date, 
     ## +     end.date = end_date)
@@ -363,14 +356,15 @@ source("008_Unemployment initial claims.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(3 * (13 * 
-    ## +     7)))
+    ## > start_date <- end_date - (3 * (13 * 7))
     ## 
     ## > fr_IC4WSA <- makeFREDtable("IC4WSA", start.date = start_date, 
     ## +     end.date = end_date)
@@ -394,14 +388,15 @@ source("009_Breakeven inflation.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
-    ## > start_date <- as_date((now() - 1) - days(2 * (14 * 
-    ## +     7)))
+    ## > start_date <- end_date - (2 * (13 * 7))
     ## 
     ## > fr_T5YIE <- makeFREDtable("T5YIE", start.date = start_date, 
     ## +     end.date = end_date)
@@ -425,10 +420,12 @@ source("010_GDP growth.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
     ## > start_date <- ymd("19800101")
@@ -456,10 +453,12 @@ source("011_M2 money stock growth.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
     ## > start_date <- ymd("19800101")
@@ -486,10 +485,12 @@ source("012_Consumer price index growth.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
     ## > start_date <- ymd("19800101")
@@ -519,10 +520,12 @@ source("013_Producer price index growth.R", echo = TRUE)
 ```
 
     ## 
-    ## > end_date <- now() - 1
+    ## > end_date <- Sys.Date() - 1
     ## 
-    ## > if (wday(now() - 1) > 6 || wday(now() - 1) == 1) {
-    ## +     end_date <- as_date(now() - days(wday(now() - 1) - 6))
+    ## > if (wday(end_date) == 1) {
+    ## +     end_date <- end_date - 3
+    ## + } else if (wday(end_date) == 7) {
+    ## +     end_date <- end_date - 2
     ## + }
     ## 
     ## > start_date <- ymd("19800101")
@@ -543,6 +546,6 @@ source("013_Producer price index growth.R", echo = TRUE)
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
     ## +     scale_y_continuous(limi .... [TRUNCATED]
 
-### Finally, Print the Plots for Saturday Morning Update: November 02, 2019
+### Finally, Print the Plots for Monday Morning Update: November 04, 2019
 
 ![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->

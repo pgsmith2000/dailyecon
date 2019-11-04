@@ -1,14 +1,14 @@
 # set start and end dates
-end_date <- now() - 1
-if(wday(now() - 1) > 6 || wday(now() - 1) == 1){
-  end_date <- as_date(now() - days(wday(now() - 1)-6))
-}
-start_date <- as_date((now() - 1) - days(26*7) - days(1))
-end_date2 <- start_date 
-start_date2 <- start_date - days(26*7)
+end_date <- Sys.Date() - 1
 
-end_date - start_date
-end_date2 - start_date2
+if (wday(end_date) == 1){
+  end_date <- end_date - 3
+} else if (wday(end_date) == 7){
+  end_date <- end_date - 2
+}
+start_date <- end_date - (26*7)
+end_date2 <- start_date
+start_date2 <- start_date - (26*7)
 
 # last 6 month data for DJIA, SP500, and NASDAQCOM
 fr_DJIA <- fredr(series_id = "DJIA",
@@ -18,7 +18,7 @@ fr_SP500 <- fredr(series_id = "SP500",
 fr_NASDAQCOM <- fredr(series_id = "NASDAQCOM",
                       start_date, end_date)
 
-date <- seq(as_date(start_date), as_date(end_date), by="days")
+date <- seq(start_date, end_date, by="days")
 fr_dates <- as.data.frame(date)
 frIndex <- as.data.frame(bind_rows(fr_dates,fr_DJIA, fr_SP500, fr_NASDAQCOM))
 frIndex$series_id <- as.factor(frIndex$series_id)
@@ -34,7 +34,7 @@ fr_SP500 <- fredr(series_id = "SP500",
 fr_NASDAQCOM <- fredr(series_id = "NASDAQCOM",
                       start_date2, end_date2)
 
-date <- seq(as_date(start_date2), as_date(end_date2), by="days")
+date <- seq(start_date2, end_date2, by="days")
 fr_dates <- as.data.frame(date)
 frIndex <- as.data.frame(bind_rows(fr_dates,fr_DJIA, fr_SP500, fr_NASDAQCOM))
 frIndex$series_id <- as.factor(frIndex$series_id)
@@ -57,7 +57,7 @@ p1 <- ggplot(dfIndexChange_long, aes(x=date, y=Change, group=Symbol))
 p1 <- p1 + geom_line(aes(color=Symbol), size=2) +
   scale_y_continuous(labels=scales::percent) +
   scale_color_manual(values=c('navyblue','darkgreen', 'peru')) +
-  scale_x_date(breaks = pretty_breaks(6), date_labels = "%d %b") +
+  scale_x_date(breaks = pretty_breaks(6), date_labels = "%b %Y") +
   labs(title = "1. Six-Month Change in Major Stock Indexes", 
        x="", 
        color="", 
