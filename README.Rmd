@@ -102,7 +102,7 @@ source("012_Consumer price index growth.R", echo = TRUE)
 source("013_Producer price index growth.R", echo = TRUE)
 ```
 
-### Finally, Print the Plots for `r now() %>% format('%A')` Morning Update: `r now() %>% format('%B %d, %Y')`
+### Finally, Print the Plots for `r now() %>% format('%A')` Morning Update: `r Sys.Date() %>% format('%B %e, %Y')`
 
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}

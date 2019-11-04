@@ -27,9 +27,8 @@ First created on Oct 31, 2019. Updated on Nov 04, 2019
         1980](#consumer-price-index-growth-since-1980)
       - [13. Producer Price Index Growth Since
         1980](#producer-price-index-growth-since-1980)
-      - [Finally, Print the Plots for Monday Morning Update: November
-        04,
-        2019](#finally-print-the-plots-for-monday-morning-update-november-04-2019)
+      - [Finally, Print the Plots for Monday Morning Update: November 4,
+        2019](#finally-print-the-plots-for-monday-morning-update-november-4-2019)
 
 ## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
@@ -546,6 +545,6 @@ source("013_Producer price index growth.R", echo = TRUE)
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
     ## +     scale_y_continuous(limi .... [TRUNCATED]
 
-### Finally, Print the Plots for Monday Morning Update: November 04, 2019
+### Finally, Print the Plots for Monday Morning Update: November 4, 2019
 
 ![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
