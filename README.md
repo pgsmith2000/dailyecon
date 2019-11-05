@@ -2,13 +2,13 @@ Daily information summary of economic indicators available from FRED,
 FRB St. Louis
 ================
 Paul G. Smith
-First created on Oct 31, 2019. Updated on Nov 04, 2019
+First created on Oct 31, 2019. Updated on Nov 05, 2019
 
   - [Daily information summary of economic indicators available from
     FRED, FRB
     St. Louis](#daily-information-summary-of-economic-indicators-available-from-fred-frb-st.-louis)
-      - [Monday Morning Update: November 04,
-        2019](#monday-morning-update-november-04-2019)
+      - [Tuesday Morning Update: November 05,
+        2019](#tuesday-morning-update-november-05-2019)
       - [1. Six-Month Change in Major Stock
         Indexes](#six-month-change-in-major-stock-indexes)
       - [2. WTI Crude Oil Price](#wti-crude-oil-price)
@@ -27,8 +27,9 @@ First created on Oct 31, 2019. Updated on Nov 04, 2019
         1980](#consumer-price-index-growth-since-1980)
       - [13. Producer Price Index Growth Since
         1980](#producer-price-index-growth-since-1980)
-      - [Finally, Print the Plots for Monday Morning Update: November 4,
-        2019](#finally-print-the-plots-for-monday-morning-update-november-4-2019)
+      - [Finally, Print the Plots for Tuesday Morning Update: November
+        5,
+        2019](#finally-print-the-plots-for-tuesday-morning-update-november-5-2019)
 
 ## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
@@ -39,21 +40,19 @@ source("Dependencies.R", echo = TRUE)
     ## 
     ## > library(fredr)
     ## 
-    ## > library(dplyr)
+    ## > library(tidyverse)
 
-    ## 
-    ## Attaching package: 'dplyr'
+    ## -- Attaching packages ---------------------------------------------------------------------------- tidyverse 1.2.1 --
 
-    ## The following objects are masked from 'package:stats':
-    ## 
-    ##     filter, lag
+    ## v ggplot2 3.2.1     v purrr   0.3.3
+    ## v tibble  2.1.3     v dplyr   0.8.3
+    ## v tidyr   1.0.0     v stringr 1.4.0
+    ## v readr   1.3.1     v forcats 0.4.0
 
-    ## The following objects are masked from 'package:base':
-    ## 
-    ##     intersect, setdiff, setequal, union
+    ## -- Conflicts ------------------------------------------------------------------------------- tidyverse_conflicts() --
+    ## x dplyr::filter() masks stats::filter()
+    ## x dplyr::lag()    masks stats::lag()
 
-    ## 
-    ## > library(tidyr)
     ## 
     ## > library(lubridate)
 
@@ -65,9 +64,19 @@ source("Dependencies.R", echo = TRUE)
     ##     date
 
     ## 
-    ## > library(ggplot2)
-    ## 
     ## > library(scales)
+
+    ## 
+    ## Attaching package: 'scales'
+
+    ## The following object is masked from 'package:purrr':
+    ## 
+    ##     discard
+
+    ## The following object is masked from 'package:readr':
+    ## 
+    ##     col_factor
+
     ## 
     ## > library(gridExtra)
 
@@ -94,7 +103,7 @@ source("Functions.R", echo = TRUE)
     ## +     df$series_id <- NULL
     ## +   .... [TRUNCATED]
 
-### Monday Morning Update: November 04, 2019
+### Tuesday Morning Update: November 05, 2019
 
 ### 1\. Six-Month Change in Major Stock Indexes
 
@@ -545,6 +554,6 @@ source("013_Producer price index growth.R", echo = TRUE)
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
     ## +     scale_y_continuous(limi .... [TRUNCATED]
 
-### Finally, Print the Plots for Monday Morning Update: November 4, 2019
+### Finally, Print the Plots for Tuesday Morning Update: November 5, 2019
 
 ![](README_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->![](README_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
