@@ -4,7 +4,8 @@ St. Louis
 
 ### Daily Update for Monday Morning Update: November 11, 2019
 
-Checkout the source code at: <https://pgsmith2000.github.io/dailyecon/>
+Checkout the source code at:
+<https://pgsmith2000.github.io/dailyecon/code.html>
 
 ![Major Index
 Plot](https://pgsmith2000.github.io/dailyecon/output/g1.png) ![Major
