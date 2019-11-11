@@ -13,7 +13,7 @@ library(tidyverse)
 library(lubridate)
 ```
 
-View the **[R Source Code](code.md)
+View the **[R Source Code](code.md)**
 
 ### Daily Update for `r now() %>% format('%A')` Morning Update: `r Sys.Date() %>% format('%B %e, %Y')`
 
@@ -24,4 +24,4 @@ Checkout the source code at: https://pgsmith2000.github.io/dailyecon/
 ![Major Index Plot](https://pgsmith2000.github.io/dailyecon/output/g3.png)
 ![Major Index Plot](https://pgsmith2000.github.io/dailyecon/output/g4.png)
 
-View the **[R Source Code](code.md)
+View the **[R Source Code](code.md)**
