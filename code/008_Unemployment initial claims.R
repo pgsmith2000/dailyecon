@@ -28,3 +28,6 @@ p8 <- p8 + geom_line(size=2, color="peru") + theme_minimal() +
   theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
+
+ggsave("../output/p8.png", p8)
+

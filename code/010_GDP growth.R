@@ -16,7 +16,6 @@ delta <- ((max(fr_GDP$GDP) - min(fr_GDP$GDP))/.8) *.1
 low.delta <- min(fr_GDP$GDP) - delta
 high.delta <- max(fr_GDP$GDP) + delta                 
 
-
 # Plot it
 p10 <- ggplot(fr_GDP, aes(x=date, y=GDP))
 p10 <- p10 + geom_line(size=2, color="peru") + theme_minimal() +
@@ -29,4 +28,4 @@ p10 <- p10 + geom_line(size=2, color="peru") + theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
 
-
+ggsave("../output/p10.png", p10)

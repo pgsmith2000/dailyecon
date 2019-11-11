@@ -67,6 +67,7 @@ p1 <- p1 + geom_line(aes(color=Symbol), size=2) +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
 
+ggsave("../output/p1.png", p1)
 
 
 

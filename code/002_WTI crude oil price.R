@@ -24,5 +24,7 @@ p2 <- p2 + geom_line(size=2, color="darkgreen") + theme_minimal() +
   theme(legend.position = 'bottom') +
   theme(axis.text.x = element_text(angle = 45))
 
+ggsave("../output/p2.png", p2)
+
   
 

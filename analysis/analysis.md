@@ -90,6 +90,8 @@ source("../code/Dependencies.R", echo = TRUE)
     ##     combine
 
     ## 
+    ## > setwd("../code/")
+    ## 
     ## > user_api_key <- read.csv("../../../fred_api_key.csv", 
     ## +     stringsAsFactors = TRUE, as.is = TRUE)
     ## 
@@ -191,7 +193,11 @@ source("../code/001_Six month indexes.R", echo = TRUE)
     ## +     group = Symbol))
     ## 
     ## > p1 <- p1 + geom_line(aes(color = Symbol), size = 2) + 
-    ## +     scale_y_continuous(labels = scales::percent) + scale_color_manual(values = c("navyblue" .... [TRUNCATED]
+    ## +     scale_y_continuous(labels = scales::percent) + scale_color_manual(values = c("navyblue" .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p1.png", p1)
+
+    ## Saving 7 x 5 in image
 
 ### 2\. WTI Crude Oil Price
 
@@ -217,7 +223,11 @@ source("../code/002_WTI crude oil price.R", echo = TRUE)
     ## 
     ## > p2 <- p2 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(l .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p2.png", p2)
+
+    ## Saving 7 x 5 in image
 
 ### 3\. Regular Gasoline Price
 
@@ -243,7 +253,11 @@ source("../code/003_Gas gulf coast regular price.R", echo = TRUE)
     ## 
     ## > p3 <- p3 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     xlab("") + scale_y_c .... [TRUNCATED]
+    ## +     xlab("") + scale_y_c .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p3.png", p3)
+
+    ## Saving 7 x 5 in image
 
 ### 4\. Gasoline % of Oil Price
 
@@ -263,7 +277,11 @@ source("../code/004_Gas percent of oil.R", echo = TRUE)
     ## 
     ## > p4 <- p4 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(l .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p4.png", p4)
+
+    ## Saving 7 x 5 in image
 
 ### 5\. ULS \#2 Diesel Price
 
@@ -289,7 +307,11 @@ source("../code/005_ULS 2 diesel price.R", echo = TRUE)
     ## 
     ## > p5 <- p5 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(l .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p5.png", p5)
+
+    ## Saving 7 x 5 in image
 
 ### 6\. Price of Gold
 
@@ -324,7 +346,11 @@ source("../code/006_Price of gold.R", echo = TRUE)
     ## 
     ## > p6 <- p6 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(l .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p6.png", p6)
+
+    ## Saving 7 x 5 in image
 
 ### 7\. Price of Silver
 
@@ -357,7 +383,11 @@ source("../code/007_Price of silver.R", echo = TRUE)
     ## 
     ## > p7 <- p7 + geom_line(size = 2, color = "darkgreen") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(l .... [TRUNCATED]
+    ## +     scale_y_continuous(l .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p7.png", p7)
+
+    ## Saving 7 x 5 in image
 
 ### 8\. 4-Wk Moving Avg Unemployment Initial Claims
 
@@ -389,7 +419,11 @@ source("../code/008_Unemployment initial claims.R", echo = TRUE)
     ## > p8 <- ggplot(fr_IC4WSA, aes(x = date, y = IC4WSA))
     ## 
     ## > p8 <- p8 + geom_line(size = 2, color = "peru") + theme_minimal() + 
-    ## +     scale_x_date(breaks = pretty_breaks(6)) + scale_y_continuous(limit = c(low .... [TRUNCATED]
+    ## +     scale_x_date(breaks = pretty_breaks(6)) + scale_y_continuous(limit = c(low .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p8.png", p8)
+
+    ## Saving 7 x 5 in image
 
 ### 9\. Breakeven Inflation, 5-Year
 
@@ -421,7 +455,11 @@ source("../code/009_Breakeven inflation.R", echo = TRUE)
     ## > p9 <- ggplot(fr_T5YIE, aes(x = date, y = T5YIE))
     ## 
     ## > p9 <- p9 + geom_line(size = 2, color = "peru") + theme_minimal() + 
-    ## +     scale_x_date(breaks = pretty_breaks(6)) + scale_y_continuous(limit = c(0,  .... [TRUNCATED]
+    ## +     scale_x_date(breaks = pretty_breaks(6)) + scale_y_continuous(limit = c(0,  .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p9.png", p9)
+
+    ## Saving 7 x 5 in image
 
 ### 10\. GDP Growth Since 1980
 
@@ -454,7 +492,11 @@ source("../code/010_GDP growth.R", echo = TRUE)
     ## 
     ## > p10 <- p10 + geom_line(size = 2, color = "peru") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(limi .... [TRUNCATED]
+    ## +     scale_y_continuous(limi .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p10.png", p10)
+
+    ## Saving 7 x 5 in image
 
 ### 11\. M2 Money Stock Growth Since 1980
 
@@ -486,7 +528,13 @@ source("../code/011_M2 money stock growth.R", echo = TRUE)
     ## 
     ## > p11 <- p11 + geom_line(size = 2, color = "peru") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(limi .... [TRUNCATED]
+    ## +     scale_y_continuous(limi .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p11.png", p11)
+
+    ## Saving 7 x 5 in image
+
+    ## Warning: Removed 1 rows containing missing values (geom_smooth).
 
 ### 12\. Consumer Price Index Growth Since 1980
 
@@ -521,7 +569,11 @@ source("../code/012_Consumer price index growth.R", echo = TRUE)
     ## 
     ## > p12 <- p12 + geom_line(size = 2, color = "peru") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(limi .... [TRUNCATED]
+    ## +     scale_y_continuous(limi .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p12.png", p12)
+
+    ## Saving 7 x 5 in image
 
 ### 13\. Producer Price Index Growth Since 1980
 
@@ -554,10 +606,16 @@ source("../code/013_Producer price index growth.R", echo = TRUE)
     ## 
     ## > p13 <- p13 + geom_line(size = 2, color = "peru") + 
     ## +     theme_minimal() + scale_x_date(breaks = pretty_breaks(6)) + 
-    ## +     scale_y_continuous(limi .... [TRUNCATED]
+    ## +     scale_y_continuous(limi .... [TRUNCATED] 
+    ## 
+    ## > ggsave("../output/p13.png", p13)
+
+    ## Saving 7 x 5 in image
 
 ### Finally, Print the Plots for Monday Morning Update: November 11, 2019
 
-![](analysis_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->![](analysis_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->![](analysis_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->![](analysis_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
+``` r
+source("../code/200_Print report.R", echo = FALSE)
+```
 
 Back to **[Index](index.md)**
