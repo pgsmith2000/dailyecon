@@ -1,0 +1,35 @@
+---
+title: "Daily summary of economic indicator data available from FRED, FRB St. Louis"
+output: 
+  github_document:
+    toc: false
+    html_preview: false
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("../code/Dependencies.R", echo = F)
+source("../code/Functions.R", echo = F)
+source("../code/001_Six month indexes.R", echo = F)
+source("../code/002_WTI crude oil price.R", echo = F)
+source("../code/003_Gas gulf coast regular price.R", echo = F)
+source("../code/004_Gas percent of oil.R", echo = F)
+source("../code/005_ULS 2 diesel price.R", echo = F)
+source("../code/006_Price of gold.R", echo = F)
+source("../code/007_Price of silver.R", echo = F)
+source("../code/008_Unemployment initial claims.R", echo = F)
+source("../code/009_Breakeven inflation.R", echo = F)
+source("../code/010_GDP growth.R", echo = F)
+source("../code/011_M2 money stock growth.R", echo = F)
+source("../code/012_Consumer price index growth.R", echo = F)
+source("../code/013_Producer price index growth.R", echo = F)
+```
+
+### Daily Update for `r now() %>% format('%A')` Morning Update: `r Sys.Date() %>% format('%B %e, %Y')`
+
+Views **[Analysis code in R](analysis.md)**
+
+
+```{r echo=TRUE, message=FALSE, warning=FALSE}
+source("../code/200_Print report.R", echo = FALSE)
+```

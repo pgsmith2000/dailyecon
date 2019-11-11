@@ -33,8 +33,10 @@ First created on Oct 31, 2019. Updated on Nov 11, 2019
 
 ## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
+Back to **[Index](index.md)**
+
 ``` r
-source("Dependencies.R", echo = TRUE)
+source("../code/Dependencies.R", echo = TRUE)
 ```
 
     ## 
@@ -42,14 +44,14 @@ source("Dependencies.R", echo = TRUE)
     ## 
     ## > library(tidyverse)
 
-    ## -- Attaching packages ----------------- tidyverse 1.2.1 --
+    ## -- Attaching packages ------------------------------ tidyverse 1.2.1 --
 
     ## v ggplot2 3.2.1     v purrr   0.3.3
     ## v tibble  2.1.3     v dplyr   0.8.3
     ## v tidyr   1.0.0     v stringr 1.4.0
     ## v readr   1.3.1     v forcats 0.4.0
 
-    ## -- Conflicts -------------------- tidyverse_conflicts() --
+    ## -- Conflicts --------------------------------- tidyverse_conflicts() --
     ## x dplyr::filter() masks stats::filter()
     ## x dplyr::lag()    masks stats::lag()
 
@@ -88,13 +90,13 @@ source("Dependencies.R", echo = TRUE)
     ##     combine
 
     ## 
-    ## > user_api_key <- read.csv("../../fred_api_key.csv", 
+    ## > user_api_key <- read.csv("../../../fred_api_key.csv", 
     ## +     stringsAsFactors = TRUE, as.is = TRUE)
     ## 
     ## > fredr_set_key(user_api_key$fredAPIkey)
 
 ``` r
-source("Functions.R", echo = TRUE)
+source("../code/Functions.R", echo = TRUE)
 ```
 
     ## 
@@ -108,7 +110,7 @@ source("Functions.R", echo = TRUE)
 ### 1\. Six-Month Change in Major Stock Indexes
 
 ``` r
-source("001_Six month indexes.R", echo = TRUE)
+source("../code/001_Six month indexes.R", echo = TRUE)
 ```
 
     ## 
@@ -194,7 +196,7 @@ source("001_Six month indexes.R", echo = TRUE)
 ### 2\. WTI Crude Oil Price
 
 ``` r
-source("002_WTI crude oil price.R", echo = TRUE)
+source("../code/002_WTI crude oil price.R", echo = TRUE)
 ```
 
     ## 
@@ -220,7 +222,7 @@ source("002_WTI crude oil price.R", echo = TRUE)
 ### 3\. Regular Gasoline Price
 
 ``` r
-source("003_Gas gulf coast regular price.R", echo = TRUE)
+source("../code/003_Gas gulf coast regular price.R", echo = TRUE)
 ```
 
     ## 
@@ -246,7 +248,7 @@ source("003_Gas gulf coast regular price.R", echo = TRUE)
 ### 4\. Gasoline % of Oil Price
 
 ``` r
-source("004_Gas percent of oil.R", echo = TRUE)
+source("../code/004_Gas percent of oil.R", echo = TRUE)
 ```
 
     ## 
@@ -266,7 +268,7 @@ source("004_Gas percent of oil.R", echo = TRUE)
 ### 5\. ULS \#2 Diesel Price
 
 ``` r
-source("005_ULS 2 diesel price.R", echo = TRUE)
+source("../code/005_ULS 2 diesel price.R", echo = TRUE)
 ```
 
     ## 
@@ -292,7 +294,7 @@ source("005_ULS 2 diesel price.R", echo = TRUE)
 ### 6\. Price of Gold
 
 ``` r
-source("006_Price of gold.R", echo = TRUE)
+source("../code/006_Price of gold.R", echo = TRUE)
 ```
 
     ## 
@@ -327,7 +329,7 @@ source("006_Price of gold.R", echo = TRUE)
 ### 7\. Price of Silver
 
 ``` r
-source("007_Price of silver.R", echo = TRUE)
+source("../code/007_Price of silver.R", echo = TRUE)
 ```
 
     ## 
@@ -360,7 +362,7 @@ source("007_Price of silver.R", echo = TRUE)
 ### 8\. 4-Wk Moving Avg Unemployment Initial Claims
 
 ``` r
-source("008_Unemployment initial claims.R", echo = TRUE)
+source("../code/008_Unemployment initial claims.R", echo = TRUE)
 ```
 
     ## 
@@ -392,7 +394,7 @@ source("008_Unemployment initial claims.R", echo = TRUE)
 ### 9\. Breakeven Inflation, 5-Year
 
 ``` r
-source("009_Breakeven inflation.R", echo = TRUE)
+source("../code/009_Breakeven inflation.R", echo = TRUE)
 ```
 
     ## 
@@ -424,7 +426,7 @@ source("009_Breakeven inflation.R", echo = TRUE)
 ### 10\. GDP Growth Since 1980
 
 ``` r
-source("010_GDP growth.R", echo = TRUE)
+source("../code/010_GDP growth.R", echo = TRUE)
 ```
 
     ## 
@@ -457,7 +459,7 @@ source("010_GDP growth.R", echo = TRUE)
 ### 11\. M2 Money Stock Growth Since 1980
 
 ``` r
-source("011_M2 money stock growth.R", echo = TRUE)
+source("../code/011_M2 money stock growth.R", echo = TRUE)
 ```
 
     ## 
@@ -489,7 +491,7 @@ source("011_M2 money stock growth.R", echo = TRUE)
 ### 12\. Consumer Price Index Growth Since 1980
 
 ``` r
-source("012_Consumer price index growth.R", echo = TRUE)
+source("../code/012_Consumer price index growth.R", echo = TRUE)
 ```
 
     ## 
@@ -524,7 +526,7 @@ source("012_Consumer price index growth.R", echo = TRUE)
 ### 13\. Producer Price Index Growth Since 1980
 
 ``` r
-source("013_Producer price index growth.R", echo = TRUE)
+source("../code/013_Producer price index growth.R", echo = TRUE)
 ```
 
     ## 
@@ -557,3 +559,5 @@ source("013_Producer price index growth.R", echo = TRUE)
 ### Finally, Print the Plots for Monday Morning Update: November 11, 2019
 
 ![](analysis_files/figure-gfm/unnamed-chunk-15-1.png)<!-- -->![](analysis_files/figure-gfm/unnamed-chunk-15-2.png)<!-- -->![](analysis_files/figure-gfm/unnamed-chunk-15-3.png)<!-- -->![](analysis_files/figure-gfm/unnamed-chunk-15-4.png)<!-- -->
+
+Back to **[Index](index.md)**

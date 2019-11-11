@@ -8,21 +8,21 @@ output:
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
-source("Dependencies.R", echo = F)
-source("Functions.R", echo = F)
-source("001_Six month indexes.R", echo = F)
-source("002_WTI crude oil price.R", echo = F)
-source("003_Gas gulf coast regular price.R", echo = F)
-source("004_Gas percent of oil.R", echo = F)
-source("005_ULS 2 diesel price.R", echo = F)
-source("006_Price of gold.R", echo = F)
-source("007_Price of silver.R", echo = F)
-source("008_Unemployment initial claims.R", echo = F)
-source("009_Breakeven inflation.R", echo = F)
-source("010_GDP growth.R", echo = F)
-source("011_M2 money stock growth.R", echo = F)
-source("012_Consumer price index growth.R", echo = F)
-source("013_Producer price index growth.R", echo = F)
+source("./code/Dependencies.R", echo = F)
+source("./code/Functions.R", echo = F)
+source("./code/001_Six month indexes.R", echo = F)
+source("./code/002_WTI crude oil price.R", echo = F)
+source("./code/003_Gas gulf coast regular price.R", echo = F)
+source("./code/004_Gas percent of oil.R", echo = F)
+source("./code/005_ULS 2 diesel price.R", echo = F)
+source("./code/006_Price of gold.R", echo = F)
+source("./code/007_Price of silver.R", echo = F)
+source("./code/008_Unemployment initial claims.R", echo = F)
+source("./code/009_Breakeven inflation.R", echo = F)
+source("./code/010_GDP growth.R", echo = F)
+source("./code/011_M2 money stock growth.R", echo = F)
+source("./code/012_Consumer price index growth.R", echo = F)
+source("./code/013_Producer price index growth.R", echo = F)
 ```
 
 ### Daily Update for `r now() %>% format('%A')` Morning Update: `r Sys.Date() %>% format('%B %e, %Y')`
@@ -31,5 +31,5 @@ Views **[Analysis code in R](analysis.md)**
 
 
 ```{r echo=TRUE, message=FALSE, warning=FALSE}
-source("200_Print report.R", echo = FALSE)
+source("./code/200_Print report.R", echo = FALSE)
 ```
