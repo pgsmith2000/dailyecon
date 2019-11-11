@@ -6,7 +6,7 @@ First created on Oct 31, 2019. Updated on Nov 11, 2019
   - [Daily Update for Monday Morning Update: November 11,
     2019](#daily-update-for-monday-morning-update-november-11-2019)
 
-View the \*\*[R Source Code](code.md)
+View the **[R Source Code](code.md)**
 
 ### Daily Update for Monday Morning Update: November 11, 2019
 
@@ -19,4 +19,4 @@ Index Plot](https://pgsmith2000.github.io/dailyecon/output/g2.png)
 Plot](https://pgsmith2000.github.io/dailyecon/output/g3.png) ![Major
 Index Plot](https://pgsmith2000.github.io/dailyecon/output/g4.png)
 
-View the \*\*[R Source Code](code.md)
+View the **[R Source Code](code.md)**
