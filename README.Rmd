@@ -1,110 +1,35 @@
 ---
-title: "Daily information summary of economic indicators available from FRED, FRB St. Louis"
-author: "Paul G. Smith"
-date: '`r paste("First created on Oct 31, 2019. Updated on", format(Sys.Date(),"%b %d, %Y"))`'
+title: "Daily summary of economic indicator data available from FRED, FRB St. Louis"
 output: 
   github_document:
-    toc: true
+    toc: false
     html_preview: false
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+source("Dependencies.R", echo = F)
+source("Functions.R", echo = F)
+source("001_Six month indexes.R", echo = F)
+source("002_WTI crude oil price.R", echo = F)
+source("003_Gas gulf coast regular price.R", echo = F)
+source("004_Gas percent of oil.R", echo = F)
+source("005_ULS 2 diesel price.R", echo = F)
+source("006_Price of gold.R", echo = F)
+source("007_Price of silver.R", echo = F)
+source("008_Unemployment initial claims.R", echo = F)
+source("009_Breakeven inflation.R", echo = F)
+source("010_GDP growth.R", echo = F)
+source("011_M2 money stock growth.R", echo = F)
+source("012_Consumer price index growth.R", echo = F)
+source("013_Producer price index growth.R", echo = F)
 ```
 
-## Daily information summary of economic indicators available from FRED, FRB St. Louis
+### Daily Update for `r now() %>% format('%A')` Morning Update: `r Sys.Date() %>% format('%B %e, %Y')`
+
+Views **[Analysis code in R](analysis.md)**
 
 
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("Dependencies.R", echo = TRUE)
-source("Functions.R", echo = TRUE)
-
-```
-
-### `r now() %>% format('%A')` Morning Update: `r now() %>% format('%B %d, %Y')`
-
-
-### 1. Six-Month Change in Major Stock Indexes
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("001_Six month indexes.R", echo = TRUE)
-```
-
-### 2. WTI Crude Oil Price
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("002_WTI crude oil price.R", echo = TRUE)
-```
-
-### 3. Regular Gasoline Price
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("003_Gas gulf coast regular price.R", echo = TRUE)
-```
-
-### 4. Gasoline % of Oil Price
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("004_Gas percent of oil.R", echo = TRUE)
-```
-
-### 5. ULS #2 Diesel Price
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("005_ULS 2 diesel price.R", echo = TRUE)
-```
-
-### 6. Price of Gold
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("006_Price of gold.R", echo = TRUE)
-```
-
-### 7. Price of Silver
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("007_Price of silver.R", echo = TRUE)
-```
-
-### 8. 4-Wk Moving Avg Unemployment Initial Claims
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("008_Unemployment initial claims.R", echo = TRUE)
-```
-
-### 9. Breakeven Inflation, 5-Year
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("009_Breakeven inflation.R", echo = TRUE)
-```
-
-### 10. GDP Growth Since 1980
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("010_GDP growth.R", echo = TRUE)
-```
-
-### 11. M2 Money Stock Growth Since 1980
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("011_M2 money stock growth.R", echo = TRUE)
-```
-
-### 12. Consumer Price Index Growth Since 1980
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("012_Consumer price index growth.R", echo = TRUE)
-```
-
-### 13. Producer Price Index Growth Since 1980
-
-```{r echo=TRUE, message=TRUE, warning=TRUE}
-source("013_Producer price index growth.R", echo = TRUE)
-```
-
-### Finally, Print the Plots for `r now() %>% format('%A')` Morning Update: `r Sys.Date() %>% format('%B %e, %Y')`
-
-
-```{r echo=FALSE, message=FALSE, warning=FALSE}
+```{r echo=TRUE, message=FALSE, warning=FALSE}
 source("200_Print report.R", echo = FALSE)
 ```
