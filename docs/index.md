@@ -33,6 +33,8 @@ First created on Oct 31, 2019. Updated on Nov 11, 2019
 
 ## Daily information summary of economic indicators available from FRED, FRB St. Louis
 
+View the \*\*[R Source Code](code.md)
+
 ``` r
 source("../code/Dependencies.R", echo = TRUE)
 ```
@@ -613,3 +615,5 @@ source("../code/013_Producer price index growth.R", echo = TRUE)
 ``` r
 source("../code/200_Print report.R", echo = FALSE)
 ```
+
+View the \*\*[R Source Code](code.md)
