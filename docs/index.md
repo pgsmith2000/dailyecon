@@ -6,8 +6,9 @@ St. Louis
 
 Views **[Analysis code in R](analysis.md)**
 
-``` r
-source("../code/200_Print report.R", echo = FALSE)
-```
-
-![](index_files/figure-gfm/unnamed-chunk-1-1.png)<!-- -->![](index_files/figure-gfm/unnamed-chunk-1-2.png)<!-- -->![](index_files/figure-gfm/unnamed-chunk-1-3.png)<!-- -->![](index_files/figure-gfm/unnamed-chunk-1-4.png)<!-- -->
+![Major Index
+Plot](https://pgsmith2000.github.io/dailyecon/output/g1.png) ![Major
+Index Plot](https://pgsmith2000.github.io/dailyecon/output/g2.png)
+![Major Index
+Plot](https://pgsmith2000.github.io/dailyecon/output/g3.png) ![Major
+Index Plot](https://pgsmith2000.github.io/dailyecon/output/g4.png)
