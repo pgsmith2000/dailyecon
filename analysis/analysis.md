@@ -90,8 +90,6 @@ source("../code/Dependencies.R", echo = TRUE)
     ##     combine
 
     ## 
-    ## > setwd("../code/")
-    ## 
     ## > user_api_key <- read.csv("../../../fred_api_key.csv", 
     ## +     stringsAsFactors = TRUE, as.is = TRUE)
     ## 
