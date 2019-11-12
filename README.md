@@ -2,7 +2,7 @@ Daily summary of economic indicator data available from FRED, FRB
 St. Louis
 ================
 
-### Daily Update for Monday Morning Update: November 11, 2019
+### Daily Update for Tuesday Morning Update: November 12, 2019
 
 Checkout the source code at:
 <https://pgsmith2000.github.io/dailyecon/code.html>
